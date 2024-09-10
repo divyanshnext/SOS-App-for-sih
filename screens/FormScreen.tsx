@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebaseConfig'; // Firestore database import
 
 export default function FormScreen({ navigation }) {
   const [phone, setPhone] = useState('');
@@ -7,15 +9,29 @@ export default function FormScreen({ navigation }) {
   const [parentContact1, setParentContact1] = useState('');
   const [parentContact2, setParentContact2] = useState('');
   const [age, setAge] = useState('');
-  const [name, setName] = useState(''); // Added name state
+  const [name, setName] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = () => {
-    // Handle form submission
-    console.log({ phone, emergencyContact, parentContact1, parentContact2, age, name });
+  const handleSubmit = async () => {
+    try {
+      // Save the form data to Firestore
+      const docRef = await addDoc(collection(db, 'users'), {
+        name,
+        phone,
+        emergencyContact,
+        parentContact1,
+        parentContact2,
+        age,
+      });
 
-    // Navigate to SOS screen with name parameter
-    navigation.replace('Sos', { name });
+      console.log("Document written with ID: ", docRef.id);
+
+      // Navigate to SOS screen with name parameter
+      navigation.replace('Sos', { name });
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      setError("Failed to save data.");
+    }
   };
 
   return (
