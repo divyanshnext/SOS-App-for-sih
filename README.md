@@ -29,13 +29,13 @@ This is a React Native app for women’s safety, designed to send an SOS alert t
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/sos-app.git
+   git clone https://github.com/your-username/SOS-App.git
    ```
 
 2. Navigate into the project directory:
 
    ```bash
-   cd sos-app
+   cd SOS-App
    ```
 
 3. Install the dependencies:
