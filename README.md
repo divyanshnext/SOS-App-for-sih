@@ -47,13 +47,13 @@ This is a React Native app for women’s safety, designed to send an SOS alert t
 4. Create a `.env` file for environment variables like Firebase config:
 
    ```plaintext
-   FIREBASE_API_KEY=your_firebase_api_key
-   FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-   FIREBASE_PROJECT_ID=your_firebase_project_id
-   FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-   FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-   FIREBASE_APP_ID=your_firebase_app_id
-   FIREBASE_MEASUREMENT_ID=your_firebase_measurement_id
+   API_KEY=your_firebase_api_key
+   AUTH_DOMAIN=your_firebase_auth_domain
+   PROJECT_ID=your_firebase_project_id
+   STORAGE_BUCKET=your_firebase_storage_bucket
+   MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+   APP_ID=your_firebase_app_id
+   MEASUREMENT_ID=your_firebase_measurement_id
    ```
 
 5. Make sure `.env` is included in `.gitignore` to avoid pushing sensitive information.
