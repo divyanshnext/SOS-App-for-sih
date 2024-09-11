@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebaseConfig'; // Ensure this file is correctly named and located
+import { auth1 } from '../firebaseConfig'; // Ensure this file is correctly named and located
 import { LoginScreenProps } from '../types'; // Import the props type from types.ts
 
 export default function LoginScreen({ navigation }: LoginScreenProps) {
@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
   const [isSignup, setIsSignup] = useState(false); // State to toggle between login and signup
 
   const handleSignup = () => {
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth1, email, password)
       .then(() => {
         navigation.replace('Form'); // Navigate to Form screen after signup
       })
@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
   };
 
   const handleLogin = () => {
-    signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth1, email, password)
       .then(() => {
         navigation.replace('Form'); // Navigate to Form screen after login
       })
