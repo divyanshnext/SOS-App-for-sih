@@ -1,4 +1,6 @@
 import React from 'react';
+import { User } from 'firebase/auth';
+
 import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function SosScreen({ route, navigation }) {
